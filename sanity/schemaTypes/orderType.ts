@@ -2,8 +2,8 @@ import { BasketIcon } from "@sanity/icons";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const orderType = defineType({
-  name: "order",
-  title: "Order",
+  name: "orders",
+  title: "Orders",
   type: "document",
   icon: BasketIcon,
   fields: [
@@ -60,7 +60,7 @@ export const orderType = defineType({
               name: "product",
               title: "Product Bought",
               type: "reference",
-              to: [{ type: "productType" }],
+              to: [{ type: "products" }],
             }),
             defineField({
               name: "quantity",
