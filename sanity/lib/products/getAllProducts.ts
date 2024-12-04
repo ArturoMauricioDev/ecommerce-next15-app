@@ -4,7 +4,7 @@ import { defineQuery } from "next-sanity";
 export const getAllProducts = async () => {
   const ALL_PRODUCTS_QUERY = defineQuery(`
             *[
-                _type == "product"
+                _type == "products"
             ]| order(name asc)
         `);
   try {
