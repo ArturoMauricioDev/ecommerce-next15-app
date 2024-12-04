@@ -57,7 +57,7 @@ export const salesType = defineType({
       const { title, discountAmount, couponCode, isActive } = selection;
       const status = isActive ? "Active" : "Inactive";
       return {
-        title: title,
+        title,
         subtitle: `${discountAmount}% off - Code: ${couponCode} - ${status}`,
       };
     },
