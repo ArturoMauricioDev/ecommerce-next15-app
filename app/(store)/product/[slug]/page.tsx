@@ -1,3 +1,4 @@
+import AddToBasketButton from "@/components/AddToBasketButton";
 import { imageUrl } from "@/lib/imageUrl";
 import { getProductBySlug } from "@/sanity/lib/products/getProductBySlug";
 import { PortableText } from "next-sanity";
@@ -34,14 +35,19 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
           )}
         </div>
         <div className="flex flex-col justify-center">
-          <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
-          <div className="text-xl font-semibold mb-4">
-            Bs{product.price?.toFixed(2)}
+          <div>
+            <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
+            <div className="text-xl font-semibold mb-4">
+              Bs{product.price?.toFixed(2)}
+            </div>
+            <div className="prose max-w-none mb-6">
+              {Array.isArray(product.description) && (
+                <PortableText value={product.description} />
+              )}
+            </div>
           </div>
-          <div className="prose max-w-none mb-6">
-            {Array.isArray(product.description) && (
-              <PortableText value={product.description} />
-            )}
+          <div className="mt-6">
+            <AddToBasketButton product={product} disabled={isOutOfStock} />
           </div>
         </div>
       </div>
