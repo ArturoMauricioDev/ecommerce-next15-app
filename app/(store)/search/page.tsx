@@ -1,4 +1,4 @@
-import ProductGrid from "@/app/components/ProductGrid";
+import ProductGrid from "@/components/ProductGrid";
 import { searchProductsByName } from "@/sanity/lib/products/searchProductsByName";
 
 const SearchPage = async ({
