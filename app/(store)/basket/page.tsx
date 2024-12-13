@@ -1,5 +1,9 @@
 "use client";
 
+import {
+  createCheckoutSession,
+  Metadata,
+} from "@/actions/createCheckoutSession";
 import AddToBasketButton from "@/components/AddToBasketButton";
 import Loader from "@/components/Loader";
 import { imageUrl } from "@/lib/imageUrl";
@@ -8,13 +12,6 @@ import { SignInButton, useAuth, useUser } from "@clerk/nextjs";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-
-export type Metadata = {
-  orderNumber: string;
-  customerName: string;
-  customerEmail: string;
-  clerkUserId: string;
-};
 
 const BasketPage = () => {
   const groupedItems = useBasketStore((state) => state.getGroupedItems());
