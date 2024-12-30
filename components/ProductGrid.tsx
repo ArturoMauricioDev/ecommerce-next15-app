@@ -16,7 +16,7 @@ const ProductGrid = ({ products }: ProductGridProps) => {
           <AnimatePresence key={product._id}>
             <motion.div
               layout
-              inital={{ opacity: 0.2 }}
+              initial={{ opacity: 0.2 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="flex justify-center"
